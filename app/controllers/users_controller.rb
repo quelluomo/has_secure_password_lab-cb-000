@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   end
 
   def home
-    redirect_to controller: 'users', action: 'new' unless session[:name]
-    @user = session[:name]
+    redirect_to controller: 'users', action: 'new' unless current_user
   end
 
   private
