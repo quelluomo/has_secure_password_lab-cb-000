@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def create
-    User.create(user_params) if user_params
+    @user = User.create(user_params)
+    if user_params
+      @user.save
+    else
+      redirect_to controller: 'users', action: 'new'
+    end
   end
 
   def home
