@@ -12,4 +12,8 @@ class SessionsController < ApplicationController
     session.delete :name
     redirect_to root_path
   end
+
+  private
+
+
 end
