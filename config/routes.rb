@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  root 'welcome#home'
-
   get '/' => 'user#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
