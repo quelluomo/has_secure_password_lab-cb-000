@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def home
-    redirect_to controller: 'users', action: 'new' unless session[:name]
+    redirect_to controller: 'users', action: 'new' unless current_user
     @user = session[:name]
   end
 
