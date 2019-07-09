@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
       if @user.save
         session[:user_id] = @user.id
+        render '/users/home'
     else
       redirect_to controller: 'users', action: 'new'
     end
