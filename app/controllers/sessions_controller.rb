@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:user][:name])
-    return head(:forbidden) unless @user.authenticate(params[:user][:password])
+    user = User.find_by(name: params[:user][:name])
+    return head(:forbidden) unless user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
     redirect_to home_path
   end
